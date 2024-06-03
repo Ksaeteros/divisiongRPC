@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcDivision";
+
+package division;
+
+// El servicio de división
+service Division {
+    // RPC para dividir dos números
+    rpc Divide (DivideRequest) returns (DivideReply);
+}
+
+// Mensaje de solicitud
+message DivideRequest {
+    double numerator = 1;
+    double denominator = 2;
+}
+
+// Mensaje de respuesta
+message DivideReply {
+    double result = 1;
+}
